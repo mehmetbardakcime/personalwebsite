@@ -4,26 +4,26 @@ import { ScrollProgress } from '@/components/ui/scroll-progress'
 import { useEffect, useState } from 'react'
 
 function CopyButton() {
-  const [text, setText] = useState('Copy')
+  const [text, setText] = useState('Kopyala')
   const currentUrl = typeof window !== 'undefined' ? window.location.href : ''
 
   useEffect(() => {
     setTimeout(() => {
-      setText('Copy')
+      setText('Kopyala')
     }, 2000)
   }, [text])
 
   return (
     <button
       onClick={() => {
-        setText('Copied')
+        setText('Kopyalandı')
         navigator.clipboard.writeText(currentUrl)
       }}
       className="font-base flex items-center gap-1 text-center text-sm text-zinc-500 transition-colors dark:text-zinc-400"
       type="button"
     >
-      <TextMorph>{text}</TextMorph>
       <span>URL</span>
+      <TextMorph className='hover:cursor-copy'>{text}</TextMorph>
     </button>
   )
 }
