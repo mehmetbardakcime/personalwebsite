@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export function Header() {
   return (
-    <header className="mb-8 flex items-center justify-between">
+    <header className="flex items-center justify-between">
       <div>
         <Link href="/" className="font-medium text-black dark:text-white">
           Mehmet Bardakcı
@@ -19,6 +19,7 @@ export function Header() {
           Geliştirici, Muallim, Müslim
         </TextEffect>
       </div>
+
     </header>
   )
 }
